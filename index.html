@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e35">
+  <meta name="description" content="Простой список задач: планируйте, отмечайте выполненное и сохраняйте фокус.">
+  <title>По порядку — список задач</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="header"><a class="brand" href="./" aria-label="По порядку — главная"><span class="brand-icon" aria-hidden="true">✓</span>по порядку<span class="brand-dot">.</span></a><span class="header-note">Меньше суеты. Больше сделанного.</span></header>
+    <main>
+      <section class="intro" aria-labelledby="page-title"><div><p class="eyebrow">ВАШ ЛИЧНЫЙ СПИСОК ЗАДАЧ</p><h1 id="page-title">Большие планы.<br><span>Маленькие шаги.</span></h1><p class="intro-copy">Освободите мысли — запишите дела.<br>И двигайтесь в своём ритме.</p></div><div class="illustration" aria-hidden="true"><div class="paper"><span class="paper-title">На сегодня</span><div><i class="checked">✓</i><b></b></div><div><i class="checked">✓</i><b></b></div><div><i></i><b></b></div><span class="paper-caption">Всё получится.</span></div><span class="spark">✳</span></div></section>
+      <section class="workspace" aria-labelledby="list-title">
+        <div class="workspace-heading"><h2 id="list-title">Мои задачи</h2><span class="saved-note" id="save-note">Сохраняются в этом браузере</span></div>
+        <form id="task-form" autocomplete="off"><label class="sr-only" for="task-input">Новая задача</label><div class="input-wrap"><span aria-hidden="true">+</span><input id="task-input" name="task" placeholder="Что нужно сделать?" maxlength="300" required><button class="add-button" type="submit">Добавить <span aria-hidden="true">+</span></button></div><p id="form-error" class="error" role="alert" hidden></p></form>
+        <div class="toolbar"><div class="filters" role="group" aria-label="Фильтр задач"><button type="button" data-filter="all" aria-pressed="true">Все <span id="count-all">0</span></button><button type="button" data-filter="active" aria-pressed="false">В работе <span id="count-active">0</span></button><button type="button" data-filter="completed" aria-pressed="false">Готово <span id="count-completed">0</span></button></div></div>
+        <ul id="task-list" aria-label="Список задач"></ul>
+        <div id="empty-state" class="empty-state"><div class="empty-icon" aria-hidden="true">✓</div><h3 id="empty-title">Здесь начинается порядок</h3><p id="empty-description">Добавьте первую задачу — и сделайте шаг к своим планам.</p></div>
+        <div class="progress-footer"><span id="progress-label">Всё начинается с одной задачи</span><div class="progress-track" role="progressbar" aria-label="Выполненные задачи" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div></div>
+      </section>
+      <p class="gentle-note">Не обязательно успеть всё. Начните с главного.</p>
+      <p id="storage-error" class="storage-error" role="alert" hidden></p><p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    </main>
+    <footer class="footer"><span>По порядку © 2026</span><span>Одно дело за раз.</span></footer>
+  </div>
+</body>
+</html>
